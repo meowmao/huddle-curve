@@ -59,6 +59,10 @@ header{
     font-size: 0.8rem;
 }
 
+.cta:hover{
+    background-color: var(--ltpink);
+}
+
 @media only screen and (min-width: 992px){
     .container{
         padding-left: var(--medium);
@@ -79,6 +83,11 @@ header a{
     border: 1px solid var(--pink);
     border-radius: 25px;
     color: var(--pink);
+}
+
+header a:hover{
+    border-color: var(--ltpink);
+    color: var(--ltpink);
 }
 
 .hero{
@@ -173,57 +182,52 @@ header a{
 .features .alternate{
     background-color: var(--paleblue);
 }
-.features .feature-1::before{
-    content:url(images/bg-section-top-mobile-1.svg);
+
+.features .feature-1::after,
+.features .feature-1::before,
+.features .feature-2::after,
+.features .feature-2::before{
+    content: "";
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 254px;
+    z-index: -1;
     position: absolute;
     left: 0;
-    transform: translateY(-110px);
+}
+
+.features .feature-1::before{
+    background-image: url(images/bg-section-top-mobile-1.svg);
+    position: absolute;
+    left: 0;
+    transform: translateY(-111px);
+    
 }
 
 .features .feature-1::after{
-    content:url(images/bg-section-bottom-mobile-1.svg);
-    position: absolute;
-    left: 0;
+    background-image:url(images/bg-section-bottom-mobile-1.svg);
+    
 }
 
 .features .feature-2::before{
-    content:url(images/bg-section-top-mobile-2.svg);
-    position: absolute;
-    left: 0;
+    background-image:url(images/bg-section-top-mobile-2.svg);
     transform: translateY(-102px);
 }
 
 .features .feature-2::after{
-    content:url(images/bg-section-bottom-mobile-2.svg);
-    position: absolute;
-    left: 0;
+    background-image:url(images/bg-section-bottom-mobile-2.svg);
+
 }
 
 @media only screen and (min-width:768px){
     .features .feature-1::before{
-        content:url(images/bg-section-top-desktop-1.svg);
-        transform: translateY(-165px);
-    }
-    
-    .features .feature-1::after{
-        content:url(images/bg-section-bottom-desktop-1.svg);
-    }
-
-    .features .feature-2::before{
-        content:url(images/bg-section-top-desktop-2.svg);
-        transform: translateY(-155px);
-        z-index: -1;
-    }
-    
-    
-    .features .feature-2::after{
-        content:url(images/bg-section-bottom-desktop-2.svg);
     }
 }
 
 @media only screen and (min-width:992px){
     .features{
         text-align: left;
+        ove
     }
     .features .features-div{
         display: grid;
@@ -242,24 +246,29 @@ header a{
         grid-area: features-text;
     }
 
+    
+
     .features .feature-1::before{
-        content:url(images/bg-section-top-desktop-1.svg);
-        transform: translateY(-300px);
-    }
+        background-image: url(images/bg-section-top-desktop-1.svg);
+        transform: translateY(-261px);
+        
+        }
+    
     
     .features .feature-1::after{
-        content:url(images/bg-section-bottom-desktop-1.svg);
-        transform: translateY(270px);
+        background-image: url(images/bg-section-bottom-desktop-1.svg);
+        height: 254px;
+        transform: translateY(300px);
     }
 
     .features .feature-2::before{
-        content:url(images/bg-section-top-desktop-2.svg);
-        transform: translateY(-280px);
+        background-image: url(images/bg-section-top-desktop-2.svg);
+        transform: translateY(-231px);
     }
     
     .features .feature-2::after{
-        content:url(images/bg-section-bottom-desktop-2.svg);
-        transform: translateY(250px);
+        background-image: url(images/bg-section-bottom-desktop-2.svg);
+        transform: translateY(312px);
     }
     
 
@@ -296,19 +305,27 @@ footer{
 
 
 footer::before{
-    content: url(images/bg-footer-top-mobile.svg);
+    content: "";
+    background-image: url(images/bg-footer-top-mobile.svg); 
+    background-repeat: no-repeat;
     width: 100%;
+    height: 250px;
     position: absolute;
     left: 0;
-    transform: translateY(-50px);
+    transform: translateY(-53px);
 }
 
 @media only screen and (min-width:992px){
     footer{
-    flex-direction: row;
-    flex-wrap: nowrap;   
+        flex-direction: row;
+        flex-wrap: nowrap;   
+        gap: 26rem;
     }
    footer::before{
+       content:"";
+       background-image:url(images/bg-footer-top-desktop.svg);
+       background-repeat: no-repeat;
+      
         /* content: url(images/bg-footer-top-desktop.svg); */
         left: 0;
         transform: translateY(-156px);
@@ -408,7 +425,6 @@ footer .left .socials a:not(:last-child){
     footer .left{
         order: 1;
         padding-top: var(--small);
-
     }
 
     footer .right{
@@ -416,7 +432,10 @@ footer .left .socials a:not(:last-child){
     }
 }
 
-
+.attribution{
+    padding: 1rem;
+    background-color: pink;
+}
 
 
 
